@@ -1,13 +1,14 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { sliderItems } from '../data';
 
 const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
     position: relative;
-    background-color: grey;
+    overflow: hidden;
 `;
 
 const Arrow = styled.div`
@@ -26,10 +27,14 @@ const Arrow = styled.div`
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
+    z-index: 2;
 `;
 
 const Wrapper = styled.div`
     height: 100%;
+    display: flex;
+    transition: all 1.5s ease;
+    transform: translateX(${props=>props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -37,6 +42,7 @@ const Slide = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
+    background-color: #${props=>props.bg}
 `;
 
 const ImgContainer = styled.div`
@@ -54,33 +60,53 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
+    font-size: 70px;    
+`;
+
+const Desc = styled.p`
     margin: 50px 0px;
     font-size: 20px;
     font-weight: 500;
+    letter-spacing: 3px;
+    `;
+const Button = styled.button`
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
 `;
 
-const Description = styled.p``;
-const Button = styled.button``;
-
 const Slider = () => {
+    
+    const [slideIndex, setSlideIndex] = useState(0);
+    const handleClick = (direction) => {
+        
+        if(direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2)
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+        }
+    };
   return (
     <Container>
-        <Arrow direction="left">
+        <Arrow direction="left" onClick={()=>handleClick("left")}>
             <ArrowLeftOutlined />            
         </Arrow> 
-        <Wrapper>
-            <Slide>
+        <Wrapper slideIndex={slideIndex}>
+            {sliderItems.map(item=>(
+            <Slide bg={item.bg}>
                 <ImgContainer>
-                    <Image src="https://clabane.com/cdn/shop/files/KOJIC-Cleansing-bar-in-Stock-wide_ff799f0e-8a83-44e4-94a4-20e57ffb785d.webp"/>
+                    <Image src={item.img}/>
                 </ImgContainer>
                 <InfoContainer>
-                    <Title>ANNIVERSARY SALE</Title>
-                    <Description>TAKE GOOD CARE OF THAT SKIN! GET FLAT 50% OFF FOR NEW ARRIVALS.</Description>
+                    <Title>{item.title}</Title>
+                    <Desc>{item.description}</Desc>
                     <Button>SHOP NOW</Button>
                 </InfoContainer>
             </Slide>
+            ))}
         </Wrapper>
-        <Arrow direction="right">
+        <Arrow direction="right" onClick={()=>handleClick("left")}>
             <ArrowRightOutlined />            
         </Arrow>        
     </Container>

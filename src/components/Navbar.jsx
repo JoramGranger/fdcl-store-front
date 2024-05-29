@@ -8,13 +8,12 @@ import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 /* styled components */
 
 const Container = styled.div`
-    margin: -10px;
     background-color: lightpink;
-    padding: 0;
+    padding: 10px; 
 `;
 
 const Wrapper = styled.div`
-    padding: 10px, 20px;
+    padding: 20px, 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;

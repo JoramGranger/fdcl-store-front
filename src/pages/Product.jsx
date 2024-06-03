@@ -5,9 +5,11 @@ import Announcement from '../components/Announcement';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import { Add, Remove } from '@mui/icons-material';
+/* #FACCE2 */
 
 const Container = styled.div`
-
+ /* background-color: #ffe5e5; */
+ background-color: #FACCE2;
 `;
 
 const Wrapper =  styled.div`

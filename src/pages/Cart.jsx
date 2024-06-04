@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import { Add, Remove } from '@mui/icons-material';
 
 const Container = styled.div`
-
+    background-color: #ffe9e9;
 `;
 
 const Wrapper = styled.div`

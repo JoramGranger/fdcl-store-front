@@ -3,13 +3,16 @@ import styled from 'styled-components'
 /* import SearchIcon from '@mui/icons-material/Search'; */
 import Badge from '@mui/material/Badge';
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
+import { mobile } from '../responsive';
+import { Link } from 'react-router-dom';
 
 
 /* styled components */
 
 const Container = styled.div`
     background-color: lightpink;
-    padding: 10px; 
+    padding: 10px;
+    ${mobile({})}
 `;
 
 const Wrapper = styled.div`
@@ -18,6 +21,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     background-color: lightpink;
+    ${mobile({})}
 `;
 
 // left
@@ -29,6 +33,7 @@ const Left = styled.div`
 const Language = styled.span`
     font-size: 14px;
     cursor: pointer;
+    ${mobile({display: "none"})}
 `;
 const SearchContainer = styled.div`
     border: 0.5px solid lightgrey;
@@ -74,19 +79,25 @@ const Navbar = () => {
             <Left>
                 <Language>En</Language>
                 <SearchContainer>
-                    <Input />
+                    <Input placeholder="Search.."/>
                     <Search style={{color:'grey',  fontSize:16}}/>
                 </SearchContainer>
             </Left>
             <Center><Logo>FORTUNE DERMA</Logo></Center>
             <Right>
-                <MenuItem>Register</MenuItem>
-                <MenuItem>Sign In</MenuItem>
-                <MenuItem>
-                    <Badge badgeContent={4} color="primary">
-                        <ShoppingCartOutlined />
-                    </Badge>                    
-                </MenuItem>
+                <Link to="/auth/register" style={{textDecoration: 'none'}}>
+                    <MenuItem>Register</MenuItem>
+                </Link>
+                <Link to="/auth/login" style={{textDecoration: 'none'}}>
+                    <MenuItem>Sign In</MenuItem>
+                </Link>
+                <Link to="/shop/cart" style={{textDecoration: 'none'}}>
+                    <MenuItem>
+                        <Badge badgeContent={4} color="primary">
+                            <ShoppingCartOutlined />
+                        </Badge>                    
+                    </MenuItem>
+                </Link>
             </Right>
         </Wrapper>
     </Container>

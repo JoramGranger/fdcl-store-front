@@ -5,6 +5,7 @@ import Announcement from '../components/Announcement';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import { Add, Remove } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     background-color: #ffe9e9;
@@ -225,7 +226,7 @@ const Cart = () => {
                         <SummaryItemPrice>UGX 65000</SummaryItemPrice>
                     </SummaryItem>
                     <Hr />
-                    <SummaryButton>CHECKOUT NOW</SummaryButton>
+                    <Link  to="/checkout" style={{textDecoration: 'none'}}><SummaryButton>CHECKOUT NOW</SummaryButton></Link>
                 </Summary>
             </Bottom>
         </Wrapper>

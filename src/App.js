@@ -11,6 +11,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import PasswordRecovery from './pages/PasswordRecovery';
+import Checkout from './pages/Checkout';
+import MyAccount from './pages/MyAccount';
 
 const App = () => {
   return (
@@ -33,6 +35,7 @@ const App = () => {
             </Route>
             {/* cart */}
             <Route path="cart" element={<Cart />} />
+            <Route path="checkout" element={<Checkout />} />
           </Route>
         </Routes>
       </BrowserRouter>

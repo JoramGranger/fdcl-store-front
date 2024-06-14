@@ -104,7 +104,7 @@ const Navbar = () => {
                 <Link to="/auth/login" style={{textDecoration: 'none'}}>
                     <MenuItem>Sign In</MenuItem>
                 </Link>
-                <Link to="/shop/cart" style={{textDecoration: 'none'}}>
+                <Link to="/cart" style={{textDecoration: 'none'}}>
                     <MenuItem>
                         <Badge badgeContent={4} color="primary">
                             <ShoppingCartOutlined />

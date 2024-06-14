@@ -280,7 +280,7 @@ const Checkout = () => {
                             ) : null}
 
                             <PaymentButtonContainer>
-                                <Link to="/my" style={{ textDecoration: 'none' }}>
+                                <Link to="/my/orders" style={{ textDecoration: 'none' }}>
                                     <PaymentButton>PLACE ORDER</PaymentButton>
                                 </Link>
                             </PaymentButtonContainer>

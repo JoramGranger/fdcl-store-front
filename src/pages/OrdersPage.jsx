@@ -6,7 +6,6 @@ import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import LeftNavigation from '../components/LeftNavigationMyAccount';
 import Orders from '../components/Orders';
-import Profile from '../components/Profile'
 
 const Container = styled.div`
     background-color: #ffe9e9;
@@ -28,7 +27,7 @@ const Right = styled.div`
     
 `;
 
-const MyAccount = () => {
+const OrdersPage = () => {
     return (
         <Container>
             <Navbar />
@@ -37,7 +36,7 @@ const MyAccount = () => {
             <Wrapper>
                 <LeftNavigation />
                 <Right>
-                    <Profile />
+                    <Orders />
                 </Right>
             </Wrapper>
             <Newsletter />
@@ -46,4 +45,4 @@ const MyAccount = () => {
     );
 };
 
-export default MyAccount;
+export default OrdersPage;

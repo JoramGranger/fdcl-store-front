@@ -3,10 +3,18 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 import appLogo from '../assets/app-logo-black.png'
 import appLogoCompressed from '../assets/app-logo-compressed-black.png'
+import dermaBG from '../assets/dermaco.jpg';
+
+/* #FDE2F3 */
+
 const Container = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: #fff9f9;
+    /* background-color: white; */
+    background-color: white;
+    background-image: url(${dermaBG});
+    background-size: cover; 
+    background-position: left;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +23,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     width: 25%;    
     padding: 20px;
-    background-color: white;
+    background-color: #FDE2F3;
     -webkit-box-shadow: 5px 5px 15px -11px #000000; 
     box-shadow: 5px 5px 10px -11px #000000;
     border-radius: 5px;
@@ -56,8 +64,8 @@ const Button = styled.button`
     width: 40%;
     border: none;
     padding: 15px 20px;
-    background-color: lightpink;
-    color: #040404;
+    background-color: black;
+    color: lightpink;
     cursor: pointer;
     border-radius: 5px;
 `;
@@ -67,6 +75,7 @@ const FormLink = styled.a`
     font-size: 12px;
     text-decoration: underline;
     cursor: pointer;
+    color: #040404;
 `;
 
 

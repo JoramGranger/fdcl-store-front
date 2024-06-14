@@ -13,6 +13,8 @@ import Cart from './pages/Cart';
 import PasswordRecovery from './pages/PasswordRecovery';
 import Checkout from './pages/Checkout';
 import MyAccount from './pages/MyAccount';
+import OrdersPage from './pages/OrdersPage';
+import SettingsPage from './pages/SettingsPage';
 
 const App = () => {
   return (
@@ -39,6 +41,8 @@ const App = () => {
             {/*my account */}
             <Route path="my">
               <Route index element={<MyAccount />} />
+              <Route path="orders" element={<OrdersPage />} />
+              <Route path="settings" element={<SettingsPage />} />
             </Route>
           </Route>
         </Routes>

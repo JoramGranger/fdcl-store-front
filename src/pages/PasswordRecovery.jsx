@@ -34,6 +34,10 @@ const Title = styled.h1`
     font-weight: 300;
     margin-top: 30px;
 `;
+const SubTitle = styled.p`
+    font-size: 14px;
+    font-weight: 300;
+`;
 
 const Form = styled.form`
     display: flex;
@@ -70,22 +74,21 @@ const FormLink = styled.a`
 `;
 
 
-const Login = () => {
+const PasswordRecovery = () => {
   return (
     <Container>
         <Wrapper>
             <Logo src={appLogoCompressed}/>
-            <Title>LOGIN</Title>
+            <Title>PASSWORD RECOVERY</Title>
+            <SubTitle>Enter your account's email address</SubTitle>
             <Form>
                 <Input placeholder="Email" />
-                <Input placeholder="password" />
-                <Button>LOGIN</Button>
-                <Link to="/auth/passwordRecovery"><FormLink>DO NOT REMEMBER YOUR PASSWORD</FormLink></Link>
-                <Link to="/auth/register"><FormLink>CREATE A NEW ACCOUNT</FormLink></Link>
+                <Button>NEXT</Button>
+                <Link to="/auth/login"><FormLink>BACK TO SIGN IN</FormLink></Link>
             </Form>
         </Wrapper>
     </Container>
   )
 }
 
-export default Login
+export default PasswordRecovery

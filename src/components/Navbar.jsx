@@ -14,6 +14,9 @@ import appLogoCompressed from '../assets/app-logo-compressed-black.png'
 const Container = styled.div`
     background-color: lightpink;
     padding: 10px;
+     position: sticky;
+    top: 0;
+    z-index: 1000;
     ${mobile({})}
 `;
 
@@ -76,6 +79,8 @@ const MenuItem = styled.div`
     font-size: 14px;
     cursor: pointer;
     margin-left: 25px; 
+    color: #040404;
+    font-weight: 500;
 `;
 
 /* styled components */

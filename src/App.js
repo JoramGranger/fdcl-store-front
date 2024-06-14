@@ -10,6 +10,7 @@ import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
+import PasswordRecovery from './pages/PasswordRecovery';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
               <Route index element={<Login />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
+              <Route path="passwordRecovery" element={<PasswordRecovery />} />
             </Route>
             {/* products */}
             <Route path="shop">

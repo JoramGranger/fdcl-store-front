@@ -5,6 +5,8 @@ import Badge from '@mui/material/Badge';
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 import { mobile } from '../responsive';
 import { Link } from 'react-router-dom';
+import appLogo from '../assets/app-logo-black.png'
+import appLogoCompressed from '../assets/app-logo-compressed-black.png'
 
 
 /* styled components */
@@ -36,15 +38,21 @@ const Language = styled.span`
     ${mobile({display: "none"})}
 `;
 const SearchContainer = styled.div`
-    border: 0.5px solid lightgrey;
+    border: none;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     margin-left: 25px;
-    padding: 5px
+    padding: 5px;
+    background-color: #FFE8E8;
 `;
 
 const Input = styled.input`
     border: none;
+    background-color: transparent;
+    &:focus {
+    outline: none;
+    }
 `;
 
 // center
@@ -52,8 +60,8 @@ const Center = styled.div`
     flex: 1;
     text-align: center;
 `;
-const Logo = styled.h1`
-    font-weight: bold;
+const Logo = styled.img`
+    height: 40px;
 `;
 
 // right
@@ -77,13 +85,13 @@ const Navbar = () => {
     <Container>
         <Wrapper>
             <Left>
-                <Language>En</Language>
+                <Language></Language>
                 <SearchContainer>
                     <Input placeholder="Search.."/>
-                    <Search style={{color:'grey',  fontSize:16}}/>
+                    <Search style={{color:'black',  fontSize:16}}/>
                 </SearchContainer>
             </Left>
-            <Center><Logo>FORTUNE DERMA</Logo></Center>
+            <Center><Logo src={appLogoCompressed} alt="fortune derma logo"/></Center>
             <Right>
                 <Link to="/auth/register" style={{textDecoration: 'none'}}>
                     <MenuItem>Register</MenuItem>

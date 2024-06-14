@@ -36,6 +36,10 @@ const App = () => {
             {/* cart */}
             <Route path="cart" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
+            {/*my account */}
+            <Route path="my">
+              <Route index element={<MyAccount />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

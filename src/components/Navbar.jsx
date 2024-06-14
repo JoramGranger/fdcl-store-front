@@ -96,7 +96,11 @@ const Navbar = () => {
                     <Search style={{color:'black',  fontSize:16}}/>
                 </SearchContainer>
             </Left>
-            <Center><Logo src={appLogoCompressed} alt="fortune derma logo"/></Center>
+            <Center>
+            <Link to="/" style={{textDecoration: 'none'}}>
+                <Logo src={appLogoCompressed} alt="fortune derma logo"/>
+                </Link>
+                </Center>
             <Right>
                 <Link to="/auth/register" style={{textDecoration: 'none'}}>
                     <MenuItem>Register</MenuItem>

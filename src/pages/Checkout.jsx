@@ -101,7 +101,15 @@ const PaymentDetailsContainer = styled.div`
 `;
 
 const CardDetails = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     margin-top: 20px;
+`;
+
+const CardInput = styled(TextField)`
+    width: calc(50% - 10px); // Adjusting for gap between inputs
 `;
 
 const PhoneInputContainer = styled.div`
@@ -119,7 +127,7 @@ const PaymentButtonContainer = styled.div`
     margin-top: 20px;
 `;
 
-const PaymentButton = styled.button`
+const PaymentButton = styled.a`
     width: 100%;
     padding: 10px;
     background-color: lightpink;
@@ -240,29 +248,21 @@ const Checkout = () => {
                         <PaymentDetailsContainer>
                             {selectedOption === 'visa' || selectedOption === 'mastercard' ? (
                                 <CardDetails>
-                                    <TextField
+                                    <CardInput
                                         label="Card Number"
                                         variant="outlined"
-                                        fullWidth
-                                        margin="normal"
                                     />
-                                    <TextField
+                                    <CardInput
                                         label="Card Holder Name"
                                         variant="outlined"
-                                        fullWidth
-                                        margin="normal"
                                     />
-                                    <TextField
+                                    <CardInput
                                         label="Expiry Date"
                                         variant="outlined"
-                                        fullWidth
-                                        margin="normal"
                                     />
-                                    <TextField
+                                    <CardInput
                                         label="CVV"
                                         variant="outlined"
-                                        fullWidth
-                                        margin="normal"
                                     />
                                 </CardDetails>
                             ) : null}
@@ -273,13 +273,14 @@ const Checkout = () => {
                                     <TextField
                                         label="Phone Number"
                                         variant="outlined"
+                                        placeholder="0700 000 000"
                                         fullWidth
                                     />
                                 </PhoneInputContainer>
                             ) : null}
 
                             <PaymentButtonContainer>
-                                <Link to="/checkout" style={{ textDecoration: 'none' }}>
+                                <Link to="/my" style={{ textDecoration: 'none' }}>
                                     <PaymentButton>PLACE ORDER</PaymentButton>
                                 </Link>
                             </PaymentButtonContainer>

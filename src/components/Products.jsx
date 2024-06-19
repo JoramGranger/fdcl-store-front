@@ -10,9 +10,14 @@ const Container = styled.div`
     justify-content: space-between;
 `;
 
+const Title = styled.h1`
+    text-align: center;
+    align-self: center;
+`;
 const Products = () => {
   return (
     <Container>
+        <Title>SKIN CARE</Title>
         {popularProducts.map((item) =>(
             <Product item={item} key={item.id} />
         ))}        

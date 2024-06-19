@@ -14,8 +14,10 @@ import appLogoCompressed from '../assets/app-logo-compressed-black.png'
 const Container = styled.div`
     background-color: lightpink;
     padding: 10px;
-     position: sticky;
+    position: sticky;
     top: 0;
+    -webkit-box-shadow: 5px 5px 15px -11px #000000; 
+    box-shadow: 5px 5px 10px -11px #000000;
     z-index: 1000;
     ${mobile({})}
 `;
@@ -82,6 +84,25 @@ const MenuItem = styled.div`
     color: #040404;
     font-weight: 500;
 `;
+const Bottom = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+`;
+const BottomMenuItem = styled.div`
+font-size: 16px;
+cursor: pointer;
+margin-left: 25px; 
+color: #040404;
+font-weight: 500;
+text-transform: uppercase;
+&:hover {
+    text-decoration: underline;
+}
+`; 
 
 /* styled components */
 
@@ -117,6 +138,25 @@ const Navbar = () => {
                 </Link>
             </Right>
         </Wrapper>
+        <Wrapper>
+            <Bottom>
+                <Link to="/" style={{textDecoration: 'none'}}>
+                    <BottomMenuItem>Home</BottomMenuItem>
+                </Link>
+                <Link to="/" style={{textDecoration: 'none'}}>
+                    <BottomMenuItem>Skin Care</BottomMenuItem>
+                </Link>
+                <Link to="/" style={{textDecoration: 'none'}}>
+                    <BottomMenuItem>Skin Concern</BottomMenuItem>
+                </Link>
+                <Link to="/" style={{textDecoration: 'none'}}>
+                    <BottomMenuItem>All Products</BottomMenuItem>
+                </Link>
+                <Link to="/" style={{textDecoration: 'none'}}>
+                    <BottomMenuItem>About</BottomMenuItem>
+                </Link>
+            </Bottom>
+            </Wrapper>
     </Container>
   )
 }

@@ -1,12 +1,26 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { sliderItems } from '../data';
+
+// Keyframes for the zoom effect
+const zoomInOut = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
 
 const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
 `;
@@ -20,11 +34,9 @@ const Arrow = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: ${props => props.direction === "left" && "10px"};
-    right: ${props => props.direction === "right" && "10px"};
-    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    ${props => props.direction === "left" ? 'left: 20px;' : 'right: 20px;'}
     cursor: pointer;
     opacity: 0.5;
     z-index: 2;
@@ -48,10 +60,12 @@ const Slide = styled.div`
 const ImgContainer = styled.div`
     height: 100%;
     flex: 1;
+    overflow: hidden;
 `;
 
 const Image = styled.img`
     height: 80%;
+    animation: ${zoomInOut} 10s infinite;
 `;
 
 const InfoContainer = styled.div`
@@ -74,6 +88,27 @@ const Button = styled.button`
     padding: 10px;
     font-size: 20px;
     background-color: transparent;
+    cursor: pointer;
+`;
+
+const SlideIndicators = styled.div`
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px; /* Adjust the height to extend upwards */
+    gap: 10px; /* Add space between indicators */
+`;
+
+const Indicator = styled.div`
+    width: 10px;
+    height: 10px;
+    background-color: ${props => props.active ? '#333' : '#ccc'};
+    margin: 0 5px;
+    border-radius: 50%;
     cursor: pointer;
 `;
 
@@ -101,7 +136,7 @@ const Slider = () => {
                 <ArrowLeftOutlined />
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
-                {sliderItems.map(item => (
+                {sliderItems.map((item, index) => (
                     <Slide bg={item.bg} key={item.id}>
                         <ImgContainer>
                             <Image src={item.img} />
@@ -117,6 +152,15 @@ const Slider = () => {
             <Arrow direction="right" onClick={() => handleClick("right")}>
                 <ArrowRightOutlined />
             </Arrow>
+            <SlideIndicators>
+                {sliderItems.map((item, index) => (
+                    <Indicator 
+                        key={index} 
+                        active={index === slideIndex} 
+                        onClick={() => setSlideIndex(index)} 
+                    />
+                ))}
+            </SlideIndicators>
         </Container>
     );
 };

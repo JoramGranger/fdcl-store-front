@@ -47,12 +47,16 @@ const ProductsList = styled.div`
 
 const ScrollContainer = styled.div`
   display: flex;
-  animation: scroll 30s linear infinite;
+  animation: scroll 60s linear infinite;
   &:hover {
     animation-play-state: paused;
   }
   @keyframes scroll {
-    0% { transform: translateX(0); }
+    0%, 10% { transform: translateX(0); }
+    20%, 30% { transform: translateX(-10%); }
+    40%, 50% { transform: translateX(-20%); }
+    60%, 70% { transform: translateX(-30%); }
+    80%, 90% { transform: translateX(-40%); }
     100% { transform: translateX(-50%); }
   }
 `;

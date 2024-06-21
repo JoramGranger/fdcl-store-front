@@ -8,16 +8,18 @@ import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import Navbar2 from '../components/Navbar2'
 import SecondaryNav from '../components/SecondaryNav'
+import HorizontalList from '../components/Products/HorizontalList'
 
 const Home = () => {
   return (
-    <div>
+    <div style={{backgroundColor: '#ffe5e5'}}>
+        <Navbar />
         <Announcement />
-        <Navbar2 />
         <SecondaryNav />
        {/*  <Navbar /> */}
         <Slider />
         <Categories />
+        <HorizontalList />
         <Products />
         <Newsletter />
         <Footer />

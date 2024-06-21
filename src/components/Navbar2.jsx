@@ -1,192 +1,181 @@
-import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Search, ShoppingCartOutlined } from '@mui/icons-material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import appLogoCompressed from '../assets/app-logo-compressed-black.png';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import styled from 'styled-components'
+/* import SearchIcon from '@mui/icons-material/Search'; */
 import Badge from '@mui/material/Badge';
-import PersonIcon from '@mui/icons-material/Person';
+import { Search, ShoppingCartOutlined } from '@mui/icons-material';
+import { mobile } from '../responsive';
+import { Link } from 'react-router-dom';
+import appLogo from '../assets/app-logo-black.png'
+import appLogoCompressed from '../assets/app-logo-compressed-black.png'
 
-const NavbarContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  background-color: #FFB6C1;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+
+/* styled components */
+
+const Container = styled.div`
+    background-color: lightpink;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    -webkit-box-shadow: 5px 5px 15px -11px #000000; 
+    box-shadow: 5px 5px 10px -11px #000000;
+    z-index: 1000;
+    ${mobile({})}
 `;
 
-const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 40px;
-
-  img {
-    height: 40px;
-    margin-right: 10px;
-  }
-
-  h1 {
-    color: #fff;
-    font-size: 1.5rem;
-  }
+const Wrapper = styled.div`
+    padding: 20px, 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightpink;
+    ${mobile({})}
 `;
 
+// left
+const Left = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: center;
+`;
+const Language = styled.span`
+    font-size: 14px;
+    cursor: pointer;
+    ${mobile({display: "none"})}
+`;
 const SearchContainer = styled.div`
-  flex: 1;
-  border: none;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px 10px;
-  height: 35px;
-  background-color: #FFE8E8;
-  max-width: 60%;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    padding: 5px;
+    background-color: #FFE8E8;
 `;
+
 const Input = styled.input`
-  border: none;
-  background-color: transparent;
-  margin-right: 52%;
-  &:focus {
+    border: none;
+    background-color: transparent;
+    &:focus {
     outline: none;
-  }
+    }
 `;
 
+// center
+const Center = styled.div`
+    flex: 1;
+    text-align: center;
+`;
+const Logo = styled.img`
+    height: 40px;
+`;
+
+// right
 const Right = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
-
-const CircularLink = styled(Link)`
-  text-decoration: none;
-  padding: 10px;
-  height: 30px;
-  width: 30px;
-  align-items: center;
-  justify-content: center;
-  background-color: #040404;
-  border-radius: 50%;
-  margin-left: 25px;
-  -webkit-box-shadow: 5px 5px 15px -11px #000000; 
-  box-shadow: 5px 5px 10px -11px #000000;
-  &:hover {
-    background-color: #FDE2F3;
-    transition: 1s all ease;
-  }
-`;
-const RectangularLink = styled(Link)`
-  text-decoration: none;
-  padding: 10px 20px;
-  align-items: center;
-  justify-content: center;
-  background-color: #040404;
-  border-radius: 10px;
-  margin-left: 25px;
-  -webkit-box-shadow: 5px 5px 15px -11px #000000; 
-  box-shadow: 5px 5px 10px -11px #000000;
-  &:hover {
-    background-color: #FDE2F3;
-    transition: 1s all ease;
-  }
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 `;
 
 const MenuItem = styled.div`
-  font-size: 14px;
-  cursor: pointer;
-  color: #ffe5e5;
-  font-weight: 500;
-  &:hover {
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 25px; 
     color: #040404;
-  }
+    font-weight: 500;
+`;
+const Bottom = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+`;
+const BottomMenuItem = styled.div`
+font-size: 16px;
+cursor: pointer;
+margin-right: 25px;
+margin-left: 25px;
+color: #040404;
+font-weight: 500;
+text-transform: uppercase;
+&:hover {
+    color: #FFE8E8;
+}
+`; 
+
+const StyledLink = styled(Link)`
+text-decoration: none;
+background-color: #FFE8E8;
+padding: 5px;
+border-radius: 5px;
+-webkit-box-shadow: 5px 5px 15px -11px #000000; 
+box-shadow: 5px 5px 10px -11px #000000;
+&:hover {
+    background-color: #040404;
+    transition: 1s all ease;
+}
 `;
 
-const slideIn = keyframes`
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-
-const slideOut = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-`;
-
-const HamburgerMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #040404;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  z-index: 105;
-  animation: ${props => (props.menuOpen ? slideIn : slideOut)} 1s forwards;
-
-  a {
-    color: #fff;
-    padding: 10px;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
-  }
-`;
+/* styled components */
 
 const Navbar2 = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [logged, setLogged] = useState(false);
-
   return (
-    <>
-      <NavbarContainer>
-        {/* <MenuIcon
-          onClick={() => setMenuOpen(true)} 
-          style={{ cursor: 'pointer', color: '#040404', fontWeight: 'bold', fontSize: '30px', marginRight: '20px' }}
-        /> */}
-        <Logo>
-          <img src={appLogoCompressed} alt="Logo" />
-        </Logo>
-        <SearchContainer>
-          <Input placeholder="Search..." />
-          <Search style={{ color: 'black', fontSize: 20 }} />
-        </SearchContainer>
-        <Right>
-          <CircularLink to="/cart" style={{ textDecoration: 'none' }}>
-            <MenuItem>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartOutlined />
-              </Badge>                    
-            </MenuItem>
-          </CircularLink>
-          <CircularLink to="/" style={{ textDecoration: 'none' }}>
-            <MenuItem>
-              <PersonIcon />                    
-            </MenuItem>
-          </CircularLink>
-          <RectangularLink to="/auth/register" style={{ textDecoration: 'none' }}>
-            <MenuItem>Register</MenuItem>
-          </RectangularLink>
-          <RectangularLink to="/auth/login" style={{ textDecoration: 'none' }}>
-            <MenuItem>Sign In</MenuItem>
-          </RectangularLink>
-        </Right>
-      </NavbarContainer>
-    </>
-  );
-};
+    <Container>
+        <Wrapper>
+            <Left>
+                <Language></Language>
+                <SearchContainer>
+                    <Input placeholder="Search.."/>
+                    <Search style={{color:'black',  fontSize:16}}/>
+                </SearchContainer>
+            </Left>
+            <Center>
+            <Link to="/" style={{textDecoration: 'none'}}>
+                <Logo src={appLogoCompressed} alt="fortune derma logo"/>
+                </Link>
+                </Center>
+            <Right>
+                <Link to="/auth/register" style={{textDecoration: 'none'}}>
+                    <MenuItem>Register</MenuItem>
+                </Link>
+                <Link to="/auth/login" style={{textDecoration: 'none'}}>
+                    <MenuItem>Sign In</MenuItem>
+                </Link>
+                <Link to="/cart" style={{textDecoration: 'none'}}>
+                    <MenuItem>
+                        <Badge badgeContent={4} color="primary">
+                            <ShoppingCartOutlined />
+                        </Badge>                    
+                    </MenuItem>
+                </Link>
+            </Right>
+        </Wrapper>
+        <Wrapper>
+            <Bottom>
+                <StyledLink to="/">
+                    <BottomMenuItem>Home</BottomMenuItem>
+                </StyledLink>
+                <StyledLink to="/">
+                    <BottomMenuItem>Skin Care</BottomMenuItem>
+                </StyledLink>
+                <StyledLink to="/">
+                    <BottomMenuItem>Skin Concern</BottomMenuItem>
+                </StyledLink>
+                <StyledLink to="/">
+                    <BottomMenuItem>All Products</BottomMenuItem>
+                </StyledLink>
+                <StyledLink to="/">
+                    <BottomMenuItem>About</BottomMenuItem>
+                </StyledLink>
+                <StyledLink to="/">
+                    <BottomMenuItem>Brands</BottomMenuItem>
+                </StyledLink>
+            </Bottom>
+            </Wrapper>
+    </Container>
+  )
+}
 
-export default Navbar2;
+export default Navbar2

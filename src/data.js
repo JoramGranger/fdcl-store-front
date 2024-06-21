@@ -58,4 +58,31 @@ export const popularProducts = [
         id: 5,
         img: "https://delightsupplies.net/wp-content/uploads/2022/05/Hawaiian-Argan-Oil-Hydrating-Sleek-Conditioner-Pink-Cover-500x500.jpg"
     },
+];
+
+export const NewProducts = [
+    {
+        id: 2,
+        price: 25000,
+        name: 'mositurizer',
+        img: "https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg"
+    },
+    {
+        id: 3,
+        price: 68000,
+        name: 'skin oil',
+        img: "https://delightsupplies.net/wp-content/uploads/2022/05/Cetaphil-Moisturizing-Lotion-Grey-Cover-500x500.jpg"
+    },
+    {
+        id: 4,
+        price: 56000,
+        name: 'shower gel',
+        img: "https://delightsupplies.net/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-16-at-13.12.23.jpg"
+    },
+    {
+        id: 5,
+        price: 45000,
+        name: 'newton',
+        img: "https://delightsupplies.net/wp-content/uploads/2022/05/Hawaiian-Argan-Oil-Hydrating-Sleek-Conditioner-Pink-Cover-500x500.jpg"
+    },
 ]

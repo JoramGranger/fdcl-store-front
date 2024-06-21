@@ -4,9 +4,8 @@ import Product from './Product';
 import { popularProducts } from '../data';
 
 const Container = styled.div`
-    padding: 20px 100px;
+    padding: 20px;
     display: flex;
-    margin-bottom: 20px;
     flex-direction: column; /* Ensure items stack vertically */
     align-items: center; /* Center align items horizontally */
 `;
@@ -23,7 +22,7 @@ const ProductsList = styled.div`
     width: 100%; /* Ensure products span full width */
 `;
 
-const Products = () => {
+const Categories = () => {
   return (
     <Container>
         <Title>SKIN CARE</Title>
@@ -42,4 +41,4 @@ const Products = () => {
   );
 }
 
-export default Products;
+export default Categories;

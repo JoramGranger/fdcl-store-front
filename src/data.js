@@ -43,10 +43,6 @@ export const categories = [
 
 export const popularProducts = [
     {
-        id: 1,
-        img: "https://images.pexels.com/photos/3735619/pexels-photo-3735619.jpeg"
-    },
-    {
         id: 2,
         img: "https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg"
     },

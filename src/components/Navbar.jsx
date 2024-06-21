@@ -110,6 +110,8 @@ text-decoration: none;
 background-color: #FFE8E8;
 padding: 5px;
 border-radius: 5px;
+-webkit-box-shadow: 5px 5px 15px -11px #000000; 
+box-shadow: 5px 5px 10px -11px #000000;
 &:hover {
     background-color: #040404;
     transition: 1s all ease;

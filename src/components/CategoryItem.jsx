@@ -19,12 +19,14 @@ const Info = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column; /* Ensure items stack vertically */
     align-items: center;
     justify-content: center;
 `;
 const Title = styled.h1`
     color: white;
     margin-bottom: 20px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
 `;
 const Button = styled.button`
     border: none;
@@ -32,6 +34,13 @@ const Button = styled.button`
     background-color: #ffe5e5;
     color: #040404;
     cursor: pointer;
+    -webkit-box-shadow: 5px 5px 15px -11px #000000; 
+    box-shadow: 5px 5px 10px -11px #000000;
+    &:hover {
+        background-color: #040404;
+        color: #ffe5e5;
+        transition: 1s all ease;    
+    }
 `;
 
 const CategoryItem = ({item}) => {

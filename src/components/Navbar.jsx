@@ -95,14 +95,26 @@ const Bottom = styled.div`
 const BottomMenuItem = styled.div`
 font-size: 16px;
 cursor: pointer;
-margin-left: 25px; 
+margin-right: 25px;
+margin-left: 25px;
 color: #040404;
 font-weight: 500;
 text-transform: uppercase;
 &:hover {
-    text-decoration: underline;
+    color: #FFE8E8;
 }
 `; 
+
+const StyledLink = styled(Link)`
+text-decoration: none;
+background-color: #FFE8E8;
+padding: 5px;
+border-radius: 5px;
+&:hover {
+    background-color: #040404;
+    transition: 1s all ease;
+}
+`;
 
 /* styled components */
 
@@ -140,24 +152,24 @@ const Navbar = () => {
         </Wrapper>
         <Wrapper>
             <Bottom>
-                <Link to="/" style={{textDecoration: 'none'}}>
+                <StyledLink to="/">
                     <BottomMenuItem>Home</BottomMenuItem>
-                </Link>
-                <Link to="/" style={{textDecoration: 'none'}}>
+                </StyledLink>
+                <StyledLink to="/">
                     <BottomMenuItem>Skin Care</BottomMenuItem>
-                </Link>
-                <Link to="/" style={{textDecoration: 'none'}}>
+                </StyledLink>
+                <StyledLink to="/">
                     <BottomMenuItem>Skin Concern</BottomMenuItem>
-                </Link>
-                <Link to="/" style={{textDecoration: 'none'}}>
+                </StyledLink>
+                <StyledLink to="/">
                     <BottomMenuItem>All Products</BottomMenuItem>
-                </Link>
-                <Link to="/" style={{textDecoration: 'none'}}>
+                </StyledLink>
+                <StyledLink to="/">
                     <BottomMenuItem>About</BottomMenuItem>
-                </Link>
-                <Link to="/" style={{textDecoration: 'none'}}>
+                </StyledLink>
+                <StyledLink to="/">
                     <BottomMenuItem>Brands</BottomMenuItem>
-                </Link>
+                </StyledLink>
             </Bottom>
             </Wrapper>
     </Container>

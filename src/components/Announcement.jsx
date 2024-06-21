@@ -31,7 +31,7 @@ const Container = styled.div`
 const Marquee = styled.div`
     display: inline-block;
     white-space: nowrap;
-    padding-left: 100%;
+    /* padding-left: 100%; */
     animation: ${scroll} 10s linear infinite;
 `;
 
@@ -44,14 +44,20 @@ const Item = styled.span`
 
 /* styled components */
 
+const textArray = [
+  "Same-Day Delivery with Easy Returns",
+  "Free Delivery for all Online Orders (within Kampala)",
+  "Live Customer Care: 8am-5pm",
+  "For Inquiries, please WhatsApp us on +256 757 518458"
+];
+
 const Announcement = () => {
   return (
     <Container>
         <Marquee>
-          <Item>Same-Day Delivery with Easy Returns</Item>
-          <Item>Free Delivery for all Online Orders (within Kampala)</Item>
-          <Item>Live Customer Care: 8am-5pm</Item>
-          <Item>For Inquiries, please WhatsApp us on +256 757 518458</Item> 
+          {textArray.concat(textArray).map((text, index) => (
+            <Item key={index}>{text}</Item>
+          ))}
         </Marquee>
     </Container>
   )

@@ -155,6 +155,9 @@ const Navbar = () => {
                 <Link to="/" style={{textDecoration: 'none'}}>
                     <BottomMenuItem>About</BottomMenuItem>
                 </Link>
+                <Link to="/" style={{textDecoration: 'none'}}>
+                    <BottomMenuItem>Brands</BottomMenuItem>
+                </Link>
             </Bottom>
             </Wrapper>
     </Container>

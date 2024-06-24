@@ -1,8 +1,8 @@
 /* styled components */
 export const Categories = [
     // skin type
-    {parentCategory: 'Skin Type', category: 'Oily Skin', link: 'oily-skin'},
-    {parentCategory: 'Skin Type', category: 'Dry Skin', link: 'dry-skin'},
+    {parentCategory: 'Skin Type', category: 'Oily Skin', link: '/shop?category=oily-skin'},
+    {parentCategory: 'Skin Type', category: 'Dry Skin', link: '/shop?category=dry-skin'},
     {parentCategory: 'Skin Type', category: 'Sensitive Skin', link: 'sensitive-skin'},
     {parentCategory: 'Skin Type', category: 'Combination Skin', link: 'combination-skin'},
     // skin concern

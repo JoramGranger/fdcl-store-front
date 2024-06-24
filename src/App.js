@@ -15,6 +15,7 @@ import Checkout from './pages/Checkout';
 import MyAccount from './pages/MyAccount';
 import OrdersPage from './pages/OrdersPage';
 import SettingsPage from './pages/SettingsPage';
+import CategoryList from './pages/CategoryList';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="shop">
               <Route index element={<ProductList />} />
               <Route path=":productId" element={<Product />} />
+              <Route path="?category=" element={<CategoryList />} />
             </Route>
             {/* cart */}
             <Route path="cart" element={<Cart />} />

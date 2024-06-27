@@ -7,7 +7,7 @@ import { mobile } from '../responsive';
 import { Link } from 'react-router-dom';
 import appLogo from '../assets/app-logo-black.png'
 import appLogoCompressed from '../assets/app-logo-compressed-black.png'
-import { Categories} from '../categories';
+import { ProductCategories} from '../data';
 
 /* styled components */
 
@@ -67,7 +67,7 @@ const SecondaryNav = () => {
         <Wrapper>
             <Bottom>
                 {
-                    Categories.map((category, index) => (
+                    ProductCategories.subCategory.map((category, index) => (
                         <StyledLink key={index} to={category.link}>
                             <BottomMenuItem>{category.category}</BottomMenuItem>
                         </StyledLink>

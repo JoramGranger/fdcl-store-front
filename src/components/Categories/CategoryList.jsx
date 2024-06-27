@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Product from './Product';
-import { popularProducts } from '../data';
+/* import Product from './Product';
+import { popularProducts } from '../data'; */
+import CategoryItem from './CategoryItem';
+import { ProductCategories } from '../../data';
 
 const Container = styled.div`
     padding: 20px;
@@ -22,23 +24,16 @@ const ProductsList = styled.div`
     width: 100%; /* Ensure products span full width */
 `;
 
-const Categories = () => {
+const CategoryList = () => {
   return (
     <Container>
-        <Title>SKIN CARE</Title>
-        <ProductsList>
-            {popularProducts.map((item) => (
-                <Product item={item} key={item.id} />
-            ))}
-        </ProductsList>
-        <Title>SKIN CONCERN</Title>
-        <ProductsList>
-            {popularProducts.map((item) => (
-                <Product item={item} key={item.id} />
-            ))}
-        </ProductsList>
+        {
+          ProductCategories.map((categoryObject) => (
+            <CategoryItem categoryObject={categoryObject} />
+          ))
+        }       
     </Container>
   );
 }
 
-export default Categories;
+export default CategoryList;

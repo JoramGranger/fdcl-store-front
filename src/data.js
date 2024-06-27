@@ -95,13 +95,13 @@ export const ProductCategories = [
             {   
                 id: 1,
                  childCategory: 'Oily Skin',
-                  link: '/shop?category=oily-skin',
+                  link: 'oily-skin',
                   img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 2,
                 childCategory: 'Dry Skin',
-                link: '/shop?category=dry-skin',
+                link: 'dry-skin',
                 img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {

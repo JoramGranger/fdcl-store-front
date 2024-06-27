@@ -66,13 +66,19 @@ const Title = styled.h1`
 // Category component
 const CategoryItem = ({ categoryObject }) => {
 
+    const navigate = useNavigate();
+
+    const handleSubCategoryClick = (subcategory) => {
+        navigate(`/shop?category=${subcategory.id}`);
+    };
+
     return (
         <CategoryContainer>
             <Title>Shop By {categoryObject.category}</Title>
             <SubCategoryList>
             {
                 categoryObject.subCategories.map((subCategoryObject) => (
-                    <SubCategoryItem key={subCategoryObject.id}>
+                    <SubCategoryItem key={subCategoryObject.id} onClick={() => handleSubCategoryClick(subCategoryObject)}>
                     <Circle>
                         <Image src={subCategoryObject.img} alt={subCategoryObject.childCategory} />
                     </Circle>

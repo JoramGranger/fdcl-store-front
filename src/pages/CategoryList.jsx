@@ -6,6 +6,7 @@ import Products from '../components/Products';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
+import queryString from 'query-string';
 
 const Container = styled.div``;
 
@@ -37,11 +38,15 @@ const Option = styled.option`
     padding: 10px;
 `;
 
-const CategoryList = () => {
+const CategoryList = ({/* products */}) => {
     const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const category = searchParams.get('category');
+    const { subcategoryId } = queryString.parse(location.search);
 
+    // Convert subcategoryId to integer
+    const subcategoryIdInt = parseInt(subcategoryId);
+
+    // Fetch or filter products based on the subcategoryId parameter
+    /* const filteredProducts = products.filter(product => product.subcategoryId === parseInt(subcategoryId)); */
     return (
         <Container>
             <Navbar />
@@ -77,8 +82,8 @@ const CategoryList = () => {
                     </Select>
                 </Filter>
             </FilterContainer>
-            <Title>{category ? `Category: ${category}` : 'Skin Care'}</Title>
-            <Products category={category} />
+            <Title>{subcategoryIdInt} shop</Title>
+            {/* <Products category={category} /> */}
             <Newsletter />
             <Footer />
         </Container>

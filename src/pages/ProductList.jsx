@@ -5,6 +5,8 @@ import Products from '../components/Products';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
+import queryString from 'query-string';
 
 const Container = styled.div`
     
@@ -37,11 +39,18 @@ const Option = styled.option`
 
 
 const ProductList = () => {
+
+    const location = useLocation();
+    const { category } = queryString.parse(location.search);
+
+    // Convert subcategoryId to integer
+    const subcategoryIdInt = parseInt(category);
+
   return (
     <Container>
         <Navbar />
         <Announcement />
-        <Title>Skin Care</Title>
+        <Title>{subcategoryIdInt}</Title>
         <FilterContainer>
             <Filter>
                 <FilterText>Filter Products:</FilterText>

@@ -12,24 +12,12 @@ const Container = styled.div`
     align-items: center; /* Center align items horizontally */
 `;
 
-const Title = styled.h1`
-    text-align: center;
-    margin-bottom: 20px; /* Add margin below title for spacing */
-`;
-
-const ProductsList = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%; /* Ensure products span full width */
-`;
-
 const CategoryList = () => {
   return (
     <Container>
         {
           ProductCategories.map((categoryObject) => (
-            <CategoryItem categoryObject={categoryObject} />
+            <CategoryItem key={categoryObject.category} categoryObject={categoryObject} />
           ))
         }       
     </Container>

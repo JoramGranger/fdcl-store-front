@@ -96,25 +96,25 @@ export const ProductCategories = [
                 id: 1,
                  childCategory: 'Oily Skin',
                   link: '/shop?category=oily-skin',
-                  img:'https://images.thedermaco.com/static/acne-2.png'
+                  img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 2,
                 childCategory: 'Dry Skin',
                 link: '/shop?category=dry-skin',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 3,
                 childCategory: 'Sensitive Skin',
                 link: 'sensitive-skin',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 4,
                 childCategory: 'Combination Skin',
                 link: 'combination-skin',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
         ],
         // skin concern
@@ -126,31 +126,31 @@ export const ProductCategories = [
                 id: 5,
                 childCategory: 'Acne',
                 link: 'acne',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 6,
                 childCategory: 'Hyperpigmentation',
                 link: 'hyperpigmentation',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 7,
                 childCategory: 'Even Skin Tone',
                 link: 'even-skin-tone',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 8,
                 childCategory: 'Open Pores',
                 link: 'open-pores',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             },
             {
                 id: 9,
                 childCategory: 'Stretch Marks',
                 link: 'stretch-marks',
-                img:'https://images.thedermaco.com/static/acne-2.png'
+                img:'https://delightsupplies.net/wp-content/uploads/2022/05/Aveeno-Daily-Moisturixing-Lotion-Grey-Cover-500x500.jpg'
             }
         ]
     }
